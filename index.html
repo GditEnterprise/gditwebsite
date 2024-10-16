@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G.dit Enterprise - Future Made Visual</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Navigation Bar */
+    header {
+      background-color: #003366; /* Blue */
+      padding: 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      top: 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 28px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700; /* Yellow Gold */
+    }
+
+    /* Hero Section */
+    .hero-section {
+      height: 100vh;
+      background-color: #ffd700; /* Yellow Gold */
+      color: #003366; /* Blue */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+      margin-top: 80px;
+    }
+
+    .hero-section h1 {
+      font-size: 58px;
+      margin-bottom: 20px;
+    }
+
+    .hero-section p {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .cta-btn {
+      background-color: #003366;
+      color: white;
+      padding: 15px 40px;
+      font-size: 18px;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #002244; /* Slightly darker blue */
+    }
+
+    /* Section Styling */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 42px;
+      color: #003366;
+      margin-bottom: 40px;
+    }
+
+    /* Services Section */
+    .services-section {
+      background-color: white;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .service-item {
+      background-color: #f9f9f9;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-item h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .service-item p {
+      font-size: 16px;
+    }
+
+    /* About Us Section */
+    .about-section {
+      background-color: #f0f0f0;
+    }
+
+    .about-section p {
+      font-size: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #333;
+    }
+
+    /* Portfolio Section */
+    .portfolio-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .portfolio-item {
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Contact Section */
+    .contact-section form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-section input, .contact-section textarea {
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .contact-section button {
+      padding: 15px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-section button:hover {
+      background-color: #002244;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 36px;
+      }
+
+      .hero-section p {
+        font-size: 20px;
+      }
+
+      nav ul {
+        gap: 10px;
+      }
+
+      nav ul li a {
+        font-size: 16px;
+      }
+
+      .service-item, .portfolio-item {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="logo">G.dit Enterprise</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-content">
+      <h1>Future Made Visual</h1>
+      <p>Innovative Digital Solutions for Your Business</p>
+      <a href="#services" class="cta-btn">Explore Our Services</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <h2>Our Services</h2>
+    <div class="service-list">
+      <div class="service-item">
+        <h3>Google Ads</h3>
+        <p>Expert management of Google Ads to boost traffic and drive conversions.</p>
+      </div>
+      <div class="service-item">
+        <h3>Google My Business</h3>
+        <p>Optimize your business for local searches on Google.</p>
+      </div>
+      <div class="service-item">
+        <h3>Facebook Ads & Marketplace</h3>
+        <p>Reach your target audience with well-crafted ads on Facebook and its marketplace.</p>
+      </div>
+      <div class="service-item">
+        <h3>Foreign Account Creation</h3>
+        <p>Specialized in creating PayPal, Stripe, and other foreign accounts for businesses.</p>
+      </div>
+      <div class="service-item">
+        <h3>Social Media Marketing</h3>
+        <p>Promote your business on Instagram, TikTok, and other platforms.</p>
+      </div>
+      <div class="service-item">
+        <h3>Graphic Design & Media Editing</h3>
+        <p>High-quality graphic design, video editing, and media production.</p>
+      </div>
+      <div class="service-item">
+        <h3>Computer Instruction</h3>
+        <p>Customized computer training for individuals and businesses.</p>
+      </div>
+      <div class="service-item">
+        <h3>Tech/Digital Solutions</h3>
+        <p>Comprehensive tech and digital solutions for your business needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about-section">
+    <h2>About Us</h2>
+    <p>G.dit Enterprise is a premier digital solutions provider, specializing in services like Google Ads, social media marketing, foreign account creation, and more. We bring innovative strategies to turn your vision into reality.</p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section">
+    <h2>Portfolio</h2>
+    <div class="portfolio-gallery">
+      <div class="portfolio-item">
+        <p>Project 1: Google Ads Campaign for XYZ</p>
+      </div>
+      <div class="portfolio-item">
+        <p>Project 2: Social Media Strategy for ABC</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 G.dit Enterprise | All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
